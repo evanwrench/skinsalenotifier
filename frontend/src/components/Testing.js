@@ -4,7 +4,7 @@ const Testing = () => {
   return (
     <header>
         <h1>Welcome to the Skin Sale Notifier</h1>
-        <Button>Test</Button>
+        <Button>HELLO WORLD</Button>
     </header>
   )
 }
