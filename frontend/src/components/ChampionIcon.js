@@ -1,8 +1,8 @@
-const ChampionIcon = (name, icon) => {
+const ChampionIcon = (props) => {
   return (
     <div>
-      <img src={icon} alt="" />
-      <p>{name}</p>
+      <img src={props.icon} alt=""  />
+      <p>{props.name}</p>
     </div>
   )
 }
