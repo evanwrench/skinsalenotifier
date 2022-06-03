@@ -1,14 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Testing from './components/Testing'
+import { MantineProvider } from '@mantine/core';
 
 function App() {
   return (
+    <MantineProvider
+    theme={{fontFamily: 'Open Sans, sans serif',}}>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          No, I'm here now!
-        </p>
+        <Testing />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,6 +21,7 @@ function App() {
         </a>
       </header>
     </div>
+    </MantineProvider>
   );
 }
 
