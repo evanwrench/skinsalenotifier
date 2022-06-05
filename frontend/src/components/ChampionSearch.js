@@ -1,10 +1,14 @@
-import { Select } from '@mantine/core';
+import { Select, Center } from '@mantine/core';
 
 function ChampionSearch() {
   return (
+    <Center>
     <Select
-      label="very good search bar"
+      label="Find Champion or skin"
       placeholder="Choose Champion"
+      size="lg"
+      searchable
+      nothingFound = "No Champions/skins match that name"
       data={[
         { value: 'vel', label: 'Velkoz' },
         { value: 'bard', label: 'Bard' },
@@ -12,6 +16,7 @@ function ChampionSearch() {
         { value: 'rengar', label: 'Rengar' },
       ]}
     />
+    </Center>
   );
 }
 

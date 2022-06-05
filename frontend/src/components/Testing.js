@@ -1,4 +1,4 @@
-import { Container, Button, Grid } from '@mantine/core';
+import { Container, Button, Grid, Space } from '@mantine/core';
 
 
 const Testing = () => {
@@ -7,21 +7,23 @@ const Testing = () => {
       fluid
       style={{ backgroundColor: '#000000', }}
       >
-      <Grid
+      <Space h="xs"/>
+      <Grid justify = "space-between"
       sx={(theme) => ({
         backgroundColor: "#000000",
         
       })}>
-      <Grid.Col span={3}>
+      <Grid.Col span={1}>
         <Button>Button</Button>
       </Grid.Col>
-      <Grid.Col span={3}>
+      <Grid.Col span={1}>
         <Button>Button</Button> 
       </Grid.Col>
-      <Grid.Col span={3} offset={2}>
+      <Grid.Col span={1} offset={5}>
         <Button>Button</Button>
       </Grid.Col>
       </Grid>
+      <Space h="xs"/>
     </Container>
     
   )
