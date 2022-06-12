@@ -8,9 +8,10 @@ import { useEffect, useState } from 'react';
 
 const ChampionGrid = () => {
   const [count, setCount] = useState(0);
+  const data = require('../champion.json');
 
   useEffect(() => {
-    console.log("Hello World");
+    console.log(data);
   }, [count]);
 
   return (
