@@ -7,18 +7,16 @@ import { Grid, Button } from '@mantine/core';
 import { useEffect, useState } from 'react';
 
 const ChampionGrid = () => {
-  const [count, setCount] = useState(0);
-  const data = require('../champion.json');
+  const JsonData = require('../champion.json');
+  const data = JsonData["data"];
+  var ListData = [];
 
-  useEffect(() => {
-    console.log(data);
-  }, [count]);
+  for(var i in data)
+    ListData.push([i, data[i]]);
+  
 
   return (
     <Grid justify = "space-around">
-      <Button onClick={() => setCount(count + 1)}>
-        {count}
-      </Button>
       <Grid.Col span={1}>
           <ChampionIcon name="Aphelios" icon={aphe}/>
         </Grid.Col>
