@@ -1,6 +1,16 @@
 import { Select, Center } from '@mantine/core';
 
 function ChampionSearch() {
+  const JsonData = require('../champion.json');
+  const data = JsonData["data"];
+  var ListData = [];
+
+  for(var i in data)
+    ListData.push([i, data[i]]);
+  
+  var ListNames = ListData.map( (item, i) => item[1]["name"]);
+  
+
   return (
     <Center>
     <Select
@@ -9,12 +19,7 @@ function ChampionSearch() {
       size="lg"
       searchable
       nothingFound = "No Champions/skins match that name"
-      data={[
-        { value: 'vel', label: 'Velkoz' },
-        { value: 'bard', label: 'Bard' },
-        { value: 'aphelios', label: 'Aphelios' },
-        { value: 'rengar', label: 'Rengar' },
-      ]}
+      data={ListNames}
     />
     </Center>
   );

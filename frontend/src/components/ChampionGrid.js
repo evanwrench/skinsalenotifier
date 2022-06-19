@@ -11,6 +11,7 @@ const ChampionGrid = () => {
   for(var i in data)
     ListData.push([i, data[i]]);
   
+  
   return (
     <Grid>
       {ListData.map( (item, i) => 
