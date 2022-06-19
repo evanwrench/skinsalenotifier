@@ -9,7 +9,6 @@ function ChampionSearch() {
     ListData.push([i, data[i]]);
   
   var ListNames = ListData.map( (item, i) => item[1]["name"]);
-  
 
   return (
     <Center>
