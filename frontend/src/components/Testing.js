@@ -1,7 +1,9 @@
 import { Container, Button, Grid, Space } from '@mantine/core';
 
 
+
 const Testing = () => {
+
   return (
     <Container 
       fluid
@@ -28,5 +30,6 @@ const Testing = () => {
     
   )
 }
+
 
 export default Testing

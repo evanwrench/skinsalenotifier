@@ -3,7 +3,7 @@
 const ChampView = () => {
   return (
     <div>
-        <h1>ChampView</h1>
+        <h1>Champ View</h1>
     </div>
   )
 }

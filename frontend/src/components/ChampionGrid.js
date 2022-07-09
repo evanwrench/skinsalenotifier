@@ -5,6 +5,8 @@ import bard from '../images/BardSquare.webp'
 import { Link } from 'react-router-dom';
 
 const ChampionGrid = () => {
+
+
   const JsonData = require('../champion.json');
   const data = JsonData["data"];
   var ListData = [];
@@ -15,11 +17,16 @@ const ChampionGrid = () => {
   
   return (
     <Grid>
-      {ListData.map( (item, i) => 
-      <Grid.Col span={2}><Link to="/champview"><ChampionIcon name = {item[1]["name"]} icon = {bard} /></Link> </Grid.Col>)};
-      {/* ICON: {"../assets/champion-tiles/" + item[1]["image"]["full"]}*/ }
-      
-      </Grid>
+      {ListData.map( (item, i) => {
+      const searchName = "champ=" + item[1]["name"];
+      return(
+      <Grid.Col span={2}>
+        <Link to={{pathname: "/champview", search: searchName }} >
+          <ChampionIcon name = {item[1]["name"]} icon = {bard} />
+        </Link>
+      </Grid.Col>
+      )})};
+    </Grid>
   )
 }
 
