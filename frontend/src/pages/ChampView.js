@@ -4,6 +4,9 @@ const ChampView = () => {
   let [ searchParams,setSearchParams ] = useSearchParams();
   var champName = searchParams.get('champ');
   var champJsonName = convertToJsonName(champName);
+  const JsonData = require('../champion_info/'+champJsonName+'.json');
+  const skinListData = JsonData["data"][champJsonName]["skins"];
+  console.log(skinListData)
 
   // Match champ name with json file name
   function convertToJsonName(s) {
@@ -27,7 +30,10 @@ const ChampView = () => {
 
   return (
     <div>
-        <h1>{champJsonName}</h1>
+      <h1>{champJsonName}</h1>
+      {skinListData.map( (item, i) => {
+        return(<h3>{item["name"]}</h3>);
+      })}
     </div>
   )
 }
