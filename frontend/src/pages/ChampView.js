@@ -10,6 +10,9 @@ const ChampView = () => {
 
   // Match champ name with json file name
   function convertToJsonName(s) {
+    if (s == "Wukong") {
+      return "MonkeyKing";
+    }
     let space = true;
     let result = "";
     for (let i = 0; i < s.length; i++) {
@@ -30,7 +33,7 @@ const ChampView = () => {
 
   return (
     <div>
-      <h1>{champJsonName}</h1>
+      <h1>{champName}</h1>
       {skinListData.map( (item, i) => {
         return(<h3>{item["name"]}</h3>);
       })}
