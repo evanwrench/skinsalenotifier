@@ -3,9 +3,16 @@ function ConvertToFileName(s) {
     // Special cases
     if (s === "Wukong") {
       return "MonkeyKing";
-    } else if (s === "Javan IV") {
+    } else if (s === "Jarvan IV") {
       return "JarvanIV";
+    } else if (s === "Renata Glasc") {
+      return "Renata";
+    } else if (s === "Rek'Sai") {
+      return "RekSai";
+    } else if (s === "Kog'Maw") {
+      return "KogMaw";
     }
+    // Default case
     let space = true;
     let result = "";
     for (let i = 0; i < s.length; i++) {
