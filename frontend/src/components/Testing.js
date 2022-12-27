@@ -1,8 +1,30 @@
 import { Container, Button, Grid, Space } from '@mantine/core';
-
+import Login from './Login'
+import { useEffect } from 'react';
+import { gapi } from 'gapi-script';
 
 
 const Testing = () => {
+
+    const clientID = "1030940212866-9kjok0j0jlsk208su1d9mochm5p5n1pg.apps.googleusercontent.com";
+
+    const gapiInit = () => {
+      gapi.load('client:auth2', initClient);
+    }
+
+
+  const initClient = () => {
+        gapi.auth2.init({
+        clientId: clientID,
+        scope: 'https://www.googleapis.com/auth/userinfo.email'
+      }).then(function () { gapi.auth2.getAuthInstance();
+        });
+      }
+      
+      
+
+    gapiInit();
+
 
   return (
     <Container 
@@ -22,7 +44,7 @@ const Testing = () => {
         <Button>Button</Button> 
       </Grid.Col>
       <Grid.Col span={1} offset={5}>
-        <Button>Button</Button>
+        <Login />
       </Grid.Col>
       </Grid>
       <Space h="xs"/>
